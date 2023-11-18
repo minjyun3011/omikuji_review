@@ -56,8 +56,16 @@ while True:
 
     time.sleep(1)
 
-    retry = input("もう一度引く(y/n) > ")
+    while True:
+        retry = input("もう一度引く(y/n) > ").lower()
 
-    if retry.lower() != "y":
-        print("ありがとうございました")
-        break  # ループから抜ける
+        if retry == "n":
+            print("ありがとうございました")
+            exit()  # プログラムを終了する
+        elif retry == "y":
+            break  # もう一度運勢を表示するループに入り直す
+        else:
+            print("yかnを選択してください")
+            continue
+
+
